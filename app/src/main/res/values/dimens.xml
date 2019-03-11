@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="toolbar_padding_top">0dp</dimen>
+    <dimen name="loading_view_margin_layout">50dp</dimen>
+    <dimen name="loading_view_progress_size">20dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">2dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+
+    <dimen name="loading_view_margin_right">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>
