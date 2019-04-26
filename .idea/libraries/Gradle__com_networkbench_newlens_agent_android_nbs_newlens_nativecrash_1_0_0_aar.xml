@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.networkbench.newlens.agent.android:nbs.newlens.nativecrash:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/nbs.newlens.nativecrash-1.0.0.aar/ee10484d90f83924114d9668bda2949e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/nbs.newlens.nativecrash-1.0.0.aar/ee10484d90f83924114d9668bda2949e/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -70,18 +70,18 @@ public class Myservice extends Service {
 
     public class MyBinder extends Binder {
         public void recordLog(){
-            new Thread(new Runnable(){
-                @Override
-                public void run() {
-                    Log.i(TAG, "begin to recorder");
-                    if(null == mFileObserver) {
-                        Log.i(TAG, "mFileObserver");
-                        mFileObserver = new SDCardFileObserver(Environment.getExternalStorageDirectory().getPath()+ File.separator+"Log/");
-                        mFileObserver.startWatching(); //开始监听
-                    }
-
-                }
-            }).start();
+//            new Thread(new Runnable(){
+//                @Override
+//                public void run() {
+//                    Log.i(TAG, "begin to recorder");
+//                    if(null == mFileObserver) {
+//                        Log.i(TAG, "mFileObserver");
+//                        mFileObserver = new SDCardFileObserver(Environment.getExternalStorageDirectory().getPath()+ File.separator+"Log/");
+//                        mFileObserver.startWatching(); //开始监听
+//                    }
+//
+//                }
+//            }).start();
 
         }
     }

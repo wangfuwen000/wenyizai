@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dcd-sdk-java/dcd-sdk-java.iml" filepath="$PROJECT_DIR$/dcd-sdk-java/dcd-sdk-java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wenyizaidcs.iml" filepath="$PROJECT_DIR$/wenyizaidcs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wenyizai.iml" filepath="$PROJECT_DIR$/wenyizai.iml" />
     </modules>
   </component>
 </project>

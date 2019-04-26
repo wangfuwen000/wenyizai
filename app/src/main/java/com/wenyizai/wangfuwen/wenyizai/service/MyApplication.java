@@ -8,8 +8,11 @@ import android.os.StrictMode;
 import android.util.Log;
 
 //import com.github.anrwatchdog.ANRWatchDog;
+import com.networkbench.agent.impl.NBSAppAgent;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.tencent.stat.StatConfig;
+import com.tencent.stat.StatService;
 import com.wenyizai.wangfuwen.wenyizai.engine.Constants;
 import com.wenyizai.wangfuwen.wenyizai.utils.CrashHandler;
 import com.wenyizai.wangfuwen.wenyizai.utils.LogUtil;
@@ -123,9 +126,21 @@ public class MyApplication extends Application {
         ImageLoader.getInstance().init(configuration);
         MyApplication.context = getApplicationContext();
 
+
+        // [可选]设置是否打开debug输出，上线时请关闭，Logcat标签为"MtaSDK"
+        // https://mta.qq.com/
+        StatConfig.setDebugEnable(true);
+        // 基础统计API
+        StatService.registerActivityLifecycleCallbacks(this);
+
+        NBSAppAgent.setLicenseKey("db65894d424e4bc9a30d3a3ef9d5870e")
+                .withLocationServiceEnabled(true).start(this.getApplicationContext());//Appkey 请从官网获取
+
+
         CrashHandler handler = CrashHandler.getInstance();
         handler.init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(handler);
+
     }
 
 

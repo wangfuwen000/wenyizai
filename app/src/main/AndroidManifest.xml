@@ -14,6 +14,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--<uses-permission android:name="android.permission.READ_LOGS" />-->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!--使用可视化操作命名功能需配置悬浮窗权限(选配)-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
 
     <application
         android:name=".service.MyApplication"
@@ -29,6 +33,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+            <!--请添加这里的整个intent-filter区块，并确保其中只有一个data字段-->
+            <intent-filter>
+                <data android:scheme="tingyun.14250"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>=
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <!--请添加这里的整个intent-filter区块，并确保其中只有一个data字段-->
         </activity>
 
         <service android:name=".service.Myservice" />

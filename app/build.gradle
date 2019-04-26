@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'newlens'
 
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 
@@ -50,6 +50,22 @@ android {
                 cppFlags ""
             }
         }
+
+        ndk {
+//            //根据需要 自行选择添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+
+            // 平台 'armeabi',
+            abiFilters 'x86','armeabi-v7a', 'arm64-v8a'
+        }
+
+        manifestPlaceholders = [
+                //A57JTC7MLR8H 属于应用"文艺"独有的 Android AppKey, 用于配置SDK
+                MTA_APPKEY:"A57JTC7MLR8H",
+                //标注应用推广渠道用以区分新用户来源，可填写如应用宝，豌豆荚等
+                MTA_CHANNEL:"应用宝"
+        ]
     }
     buildTypes {
         release {
@@ -85,7 +101,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.loopj.android:android-async-http:1.4.8'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.google.android.gms:play-services-appindexing:8.4.0'
+    implementation 'com.google.firebase:firebase-appindexing:10.0.0'
     implementation 'com.alibaba:fastjson:1.1.56.android'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support:support-annotations:28.0.0'
@@ -94,4 +110,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:0.4.1'
     androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+
+
+    // mta包稳定版和测试版本二选一，mid包必须要添加 ，可视化埋点根据需要添加
+    //mta 3.4.7 稳定版
+    implementation 'com.qq.mta:mta:3.4.7-Release'
+
+    //mid jar包 必须添加
+    implementation 'com.tencent.mid:mid:4.06-Release'
+
+    implementation 'com.networkbench.newlens.agent.android:nbs.newlens.agent:2.13.0'
+//    implementation 'com.networkbench.newlens.agent.android:nbs.newlens.nativecrash:1.0.0'
 }

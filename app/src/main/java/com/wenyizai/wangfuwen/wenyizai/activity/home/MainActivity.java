@@ -107,6 +107,8 @@ public class MainActivity extends BaseActivity {
         bindService(service,connection,Context.BIND_AUTO_CREATE);
 
 
+
+
     }
 
     @Override
